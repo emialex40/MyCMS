@@ -1,13 +1,9 @@
 <?php
 
-namespace Engine\Core\Router;
+namespace Engine\Core\Route;
 
-
-class Router
+class Route
 {
-    /**
-     * @var array
-     */
     private $routes = [];
     private $dispatcher;
     private $host;
@@ -24,15 +20,15 @@ class Router
     /**
      * @param $key
      * @param $pattern
-     * @param $controler
+     * @param $controller
      * @param string $method
      */
     public function add($key, $pattern, $controller, $method = 'GET')
     {
         $this->routes[$key] = [
-            'pattern'       => $pattern,
-            'controller'    => $controller,
-            'method'        => $method
+            'pattern'    => $pattern,
+            'controller' => $controller,
+            'method'     => $method
         ];
     }
 
@@ -60,6 +56,7 @@ class Router
                 $this->dispatcher->register($route['method'], $route['pattern'], $route['controller']);
             }
         }
+
         return $this->dispatcher;
     }
 }

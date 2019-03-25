@@ -1,0 +1,17 @@
+{
+    "name": "emial/test.loc",
+    "license": "MID",
+    "authors": [
+        {
+            "name": "emialex40",
+            "email": "26emic73@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Engine\\Di\\": "engine/DI"
+        }
+    }
+}
